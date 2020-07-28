@@ -34,6 +34,22 @@ println!("{:?}",rate_list);
 println!("{}",item_price); // can be access here because integer datatype stores on stack memory
 
 // Accessing value in Hashmap
+// Add(new), update(get) , delete(remove)
+let mut bbq = HashMap::new();
+bbq.insert(String::from("Chicken Roll"),150);
+bbq.insert(String::from("Zinger Roll"),250);
+println!("{:?}",bbq); 
+let get_value = bbq.get(&String::from("Chicken Roll"));
+println!("{:?}",get_value); 
+let get_value2 = bbq.get(&String::from("Chicken Mayo Roll"));
+println!("{:?}",get_value2);
+
+// Updating a value in hashmap
+bbq.insert(String::from("Chicken Roll"),180);
+println!("{:?}",bbq); 
+// check and update the value in hashmap
+bbq.entry(String::from("Chicken Mayo Garlic Roll")).or_insert(180);
+println!("{:?}",bbq); 
 
 
 }
