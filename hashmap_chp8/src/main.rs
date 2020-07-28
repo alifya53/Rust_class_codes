@@ -1,16 +1,30 @@
 use std::collections::HashMap;
 fn main() {
-// let mut product = HashMap::new();
-let mut menu = HashMap::with_capacity(5);
-println!("Capacity = {}",menu.capacity());
-menu.insert(String::from("Pakistani"),1);
-menu.insert(String::from("Fast Food"),2);
-menu.insert(String::from("B.B.Q"),3);
-println!("{:?}",menu);
+    // ways for declaring hashmap
+// let mut menu = HashMap::with_capacity(5);
+// println!("Capacity = {}",menu.capacity());
+// menu.insert(String::from("Pakistani"),1);
+// menu.insert(String::from("Fast Food"),2);
+// menu.insert(String::from("B.B.Q"),3);
+// println!("{:?}",menu);
 
-// product.insert(String::from("Chicken Burger"),250);
-// product.insert(String::from("Zinger Burger"),350);
+// Creating a  new hashmap
 
-// println!("{:?}",product);
-    
+let mut product = HashMap::new();
+product.insert(String::from("Chicken Burger"),250);
+product.insert(String::from("Zinger Burger"),350);
+println!("{:?}",product);    
+
+//creating a hashmap using collect method
+
+
+let menu = vec![String::from("Fastfood"),String::from("B.B.Q"),String::from("Pakistani")];
+let item = vec![String::from("Pizza"),String::from("Chicken Roll"),String::from("Biryani")];
+
+let menu_list: HashMap<_,_> = menu.iter().zip(item.iter()).collect();
+println!("{:?}",menu_list);
+
+
+
+
 }
