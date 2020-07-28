@@ -44,12 +44,30 @@ println!("{:?}",get_value);
 let get_value2 = bbq.get(&String::from("Chicken Mayo Roll"));
 println!("{:?}",get_value2);
 
-// Updating a value in hashmap
+// Updating a value in hashmap (overwrite the old value)
 bbq.insert(String::from("Chicken Roll"),180);
 println!("{:?}",bbq); 
 // check and update the value in hashmap
 bbq.entry(String::from("Chicken Mayo Garlic Roll")).or_insert(180);
 println!("{:?}",bbq); 
+
+// removing the value in hashmap
+bbq.remove(&String::from("Zinger Roll"));
+println!("{:?}",bbq); 
+
+// updating the value based on the old values
+
+let welcome = "Hello welcome to my resturant hello how are you hope you are ";
+
+let mut note = HashMap::new();
+
+for word in welcome.split_whitespace() {
+    let count = note.entry(word).or_insert(0);
+    *count += 1;
+}
+
+println!("{:?}", note);
+
 
 
 }
