@@ -17,14 +17,23 @@ println!("{:?}",product);
 
 //creating a hashmap using collect method
 
-
 let menu = vec![String::from("Fastfood"),String::from("B.B.Q"),String::from("Pakistani")];
 let item = vec![String::from("Pizza"),String::from("Chicken Roll"),String::from("Biryani")];
 
 let menu_list: HashMap<_,_> = menu.iter().zip(item.iter()).collect();
 println!("{:?}",menu_list);
 
+// Hashmap and ownership
 
+let item_name = String::from("Pan Pizza");
+let item_price = 500;
+let mut rate_list = HashMap::new();
+rate_list.insert(item_name,item_price);
+println!("{:?}",rate_list);
+// println!("{}",item_name); // value moved so can not access because string type stores on heap
+println!("{}",item_price); // can be access here because integer datatype stores on stack memory
+
+// Accessing value in Hashmap
 
 
 }
